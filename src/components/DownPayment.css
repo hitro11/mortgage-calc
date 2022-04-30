@@ -1,0 +1,4 @@
+.down-payment {
+    display: flex;
+    flex-direction: row;
+}
