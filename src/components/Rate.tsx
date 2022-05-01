@@ -4,7 +4,7 @@ const Rate = () => {
   return (
     <div className='container'>
         <label htmlFor="" className="label">Rate</label>
-        <input type="text" />
+        <input className='rate' type="text" />
     </div>
   )
 }

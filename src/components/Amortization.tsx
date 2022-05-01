@@ -13,7 +13,7 @@ const Amortization = () => {
   return (
     <div className='container'>
         <label htmlFor="" className="label">Amortization Period</label>
-        <select className="no-border">
+        <select className="no-border no-outline">
             {
                 amortPeriods.map(p => 
                     <option key={p.value} value={p.value}>{p.label}</option>

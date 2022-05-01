@@ -7,6 +7,12 @@
 	justify-content: center;
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .section {
 	margin: 0 1em;
     padding: 1.5em;
@@ -16,6 +22,7 @@
 
 .section-bg {
     margin: 0 1.1em;
+    background-color: #F7F9FA;
 }
 
 .btn {
