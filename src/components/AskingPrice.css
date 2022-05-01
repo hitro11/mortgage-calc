@@ -1,22 +1,7 @@
 .AskingPrice {
     width: max-content;
-    
-   
-}
-
-input  {
-    border-top: hidden;
-    border-left: hidden;
-    border-right: hidden;
-    border-bottom-color: black;
-}
-
-.no-outline:focus {
-    outline: none;
-    border-bottom-color: rgb(0, 66, 151);
 }
 
 .label {
     font-weight: bold;
-
 }

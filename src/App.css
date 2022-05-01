@@ -1,5 +1,6 @@
 .App {
     width: 50%;
+	padding: 1em;
     background-color: rgb(201, 201, 201);
 	display: flex;
 	flex-direction: column;
@@ -19,5 +20,17 @@
     background-color: rgb(46, 46, 46);
     border: none;
 	padding: 0.5em;
+}
+
+input {
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    border-bottom-color: black;
+}
+
+.no-outline:focus {
+    outline: none;
+    border-bottom-color: rgb(0, 66, 151);
 }
 

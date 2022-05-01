@@ -1,4 +1,47 @@
 .down-payment {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
+
+.dp {
+    flex: 15;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dp-minus {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1em;
+   
+}
+
+.minus {
+    background-color: #7DCADC;
+    color: white;
+    padding: 0;
+    border-radius: 50%;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.dp-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 5;
+}
+
+.dp-percent {
+    color: #5584A4;
+}
+
+.dp-dollar {
+    color: #70CDE7;
+}
+
+
