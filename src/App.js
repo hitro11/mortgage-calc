@@ -1,6 +1,7 @@
 import './App.css';
 import AskingPrice from './components/AskingPrice.tsx';
 import DownPayment from './components/DownPayment.tsx';
+import TotalMortgage from './components/TotalMortgage.tsx';
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       </div>
       <div className="section">
         <DownPayment className='section' />        
+      </div>
+      <div className="section-bg">
+        <TotalMortgage className='section' />        
       </div>
     </div>
   );

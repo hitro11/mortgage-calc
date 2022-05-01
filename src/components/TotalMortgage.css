@@ -1,0 +1,20 @@
+.total-mortgage {
+    background-color: #F7F9FA;
+    padding: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eq {
+    flex: 0.1;
+    background-color: #7DCADC;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    /* margin-right: -10em; */
+}
+
+.blank {
+    background-color: #F7F9FA;
+}

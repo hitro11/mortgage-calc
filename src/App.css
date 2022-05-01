@@ -1,5 +1,5 @@
 .App {
-    width: 50%;
+    width: 35%;
 	padding: 1em;
     background-color: rgb(201, 201, 201);
 	display: flex;
@@ -12,7 +12,10 @@
     padding: 1.5em;
     background-color: white;
     border: 2px solid rgb(190, 213, 248);
-	
+}
+
+.section-bg {
+    margin: 0 1em;
 }
 
 .btn {
@@ -29,8 +32,19 @@ input {
     border-bottom-color: black;
 }
 
-.no-outline:focus {
+.no-border {
+    border: hidden;
+}
+
+.outline-bot:focus {
     outline: none;
     border-bottom-color: rgb(0, 66, 151);
 }
 
+.no-outline {
+    outline: none;
+}
+
+.label {
+    font-weight: 600;
+}
