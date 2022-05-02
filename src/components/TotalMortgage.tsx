@@ -1,6 +1,11 @@
 import './TotalMortgage.css'
 
-const TotalMortgage = () => {
+const TotalMortgage: React.FC = () => {
+
+  const totalMort = (askingPrice: string, downPayment: string) => {
+    
+  }
+
   return (
     <div className='total-mortgage'>
       <label htmlFor="" className="label">Total Mortgage Required</label>
