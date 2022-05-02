@@ -32,6 +32,10 @@
 	padding: 0.5em;
 }
 
+.btn:hover {
+    cursor: pointer;
+}
+
 input {
     border-top: hidden;
     border-left: hidden;
@@ -54,4 +58,8 @@ input {
 
 .label {
     font-weight: 600;
+}
+
+.prefix {
+    color: #888;
 }

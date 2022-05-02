@@ -4,6 +4,10 @@ select {
     border-bottom-color: rgb(0, 66, 151);
 }
 
+select:hover {
+    cursor: pointer;
+}
+
 option {
 
 }
