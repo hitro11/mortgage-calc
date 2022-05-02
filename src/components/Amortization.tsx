@@ -1,4 +1,5 @@
 import './Amortization.css';
+import { useState } from 'react';
 
 const amortPeriods = [
     {label: '5 years', value: 5},
@@ -9,21 +10,34 @@ const amortPeriods = [
     {label: '30 years', value: 30}
 ];
 
-const Amortization: React.FC = () => {
-  return (
-    <div className='container'>
-        <label htmlFor="" className="label">Amortization Period</label>
-        <select className="no-border no-outline">
-            {
-                amortPeriods.map(p => 
-                    <option key={p.value} value={p.value} selected={p.selected} >{p.label}</option>
-                )
-            }
-        </select> 
+interface Props {
+    amort: string,
+    setAmort: Function,
+    disabled: boolean
+}
 
-        
-    </div>
-  )
+
+const Amortization: React.FC<Props> = (props) => {
+    
+    const selectHandler = (event) => {
+        console.log(event.target.value);
+        props.setAmort(event.target.value);
+    }
+
+    return (
+        <div className='container'>
+            <label htmlFor="" className="">Amortization Period</label>
+            <select className="no-border no-outline" defaultValue={props.amort} onChange={selectHandler} disabled={props.disabled} >
+                {
+                    amortPeriods.map(p => 
+                        <option key={p.value} value={p.value} selected={p.selected} >{p.label}</option>
+                    )
+                }
+            </select> 
+
+            
+        </div>
+    )
 }
 
 export default Amortization

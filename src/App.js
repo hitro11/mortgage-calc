@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import AskingPrice from './components/AskingPrice.tsx';
+import Principal from './components/Principal.tsx';
 import DownPayment from './components/DownPayment.tsx';
 import TotalMortgage from './components/TotalMortgage.tsx';
 import Amortization from './components/Amortization.tsx';
@@ -11,44 +11,64 @@ import './App.css';
 function App() {
 
   // state
-  const [price, setPrice] = useState(() => { return ''; });
+  const [principal, setPrincipal] = useState(() => { return '500000'; });
   const [downPay, setDownPay] = useState(() => { return ''; });
   const [downPayP, setDownPayP] = useState(() => { return ''; });
-  const [amort, setAmort] = useState(() => { return ''; });
+  const [amort, setAmort] = useState(() => { return '25'; });
   const [rate, setRate] = useState(() => { return ''; });
   const [disabled, setDisabled] = useState(() => { return true; });
+  const [totalMort, setTotalMort] = useState(() => { return ''; });
+  const [totalPay, settotalPay] = useState(() => { return ''; });
+
 
   useEffect(() => {
     if (!disabled) {
-      setDownPay('100000');
-      setDownPayP('30.00');
+      setDownPayP('10.00');
       setRate('2.00');  
     }
   }, [disabled]);
   
   // re-calculates mortgage payment when any of the listed states change
   useEffect(() => {
-    console.log('price calc');
+    if (!disabled) {
+      const period = 12 * amort;
+      const percentageRate = (rate / 1200);
+      const monthlyPay = (parseInt(totalMort) * percentageRate) / (1 - (Math.pow((1 + percentageRate), period * -1)));
+      settotalPay(parseInt(monthlyPay));
+    }
+  }, [totalMort, rate, amort]);
 
-  }, [price, rate, amort, downPay, downPayP ])
+  useEffect(() => {
+    if (!disabled) {
+      setDownPay(parseInt(principal * (downPayP/100)));
+      setTotalMort(principal - downPay);
+    }
+  }, [downPayP, principal])
+
+  useEffect(() => {
+    if (!disabled) {
+      setDownPayP(parseFloat((downPay / principal) * 100).toFixed(2));
+      setTotalMort(principal - downPay);
+    }
+  }, [downPay])
 
   return (
     <div className="App">
       <div className="section">
-        <AskingPrice setDisabled={setDisabled} setPrice={setPrice} />
+        <Principal setDisabled={setDisabled} setPrincipal={setPrincipal} principal={principal}/>
       </div>
       <div className="section">
-        <DownPayment isDisabled={disabled} downPay={downPay} downPayP={downPayP}/>        
+        <DownPayment disabled={disabled} downPay={downPay} downPayP={downPayP} setDownPay={setDownPay} setDownPayP={setDownPayP} />        
       </div>
       <div className="section-bg">
-        <TotalMortgage isDisabled={disabled}/>        
+        <TotalMortgage disabled={disabled} totalMort={totalMort} setTotalMort={setTotalMort}/>        
       </div>
       <div className="section">
-        <Amortization isDisabled={disabled} amort={amort} />
-        <Rate isDisabled={disabled} rate={rate}/>
+        <Amortization disabled={disabled} amort={amort} setAmort={setAmort} />
+        <Rate disabled={disabled} rate={rate} setRate={setRate} />
       </div>
       <div className="section-bg">
-        <TotalPayment />
+        <TotalPayment totalPay={totalPay} />
       </div>
 
 

@@ -1,6 +1,22 @@
 import './DownPayment.css';
 
-const DownPayment: React.FC = (props) => {
+interface Props {
+  downPay: string,
+  downPayP: string,
+  setDownPay,
+  setDownPayP,
+  disabled: boolean
+}
+
+const DownPayment: React.FC<Props> = (props) => {
+
+  const downPayPChange = (e) => {
+    props.setDownPayP(e.target.value);
+  }
+
+  const downPayChange = (e) => {
+    props.setDownPay(e.target.value);
+  }
 
   return (
     <div className="down-payment">
@@ -9,8 +25,8 @@ const DownPayment: React.FC = (props) => {
         </div>
         <div className='minus'>-</div>
         <div className="dp-inputs">
-            <input className='dp-percent outline-bot' type="text" disabled={props.isDisabled} defaultValue={props.downPayP} />
-            <input className='dp-dollar outline-bot' type="text" disabled={props.isDisabled} defaultValue={props.downPay}  />
+            <input className='dp-percent outline-bot' type="text" disabled={props.disabled} value={props.downPayP} onChange={downPayPChange} />
+            <input className='dp-dollar outline-bot' type="text" disabled={props.disabled} value={props.downPay} onChange={downPayChange}  />
         </div>
 
     </div>

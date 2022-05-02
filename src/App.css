@@ -1,5 +1,5 @@
 .App {
-    width: 35%;
+    width: 30%;
 	padding: 1em;
     background-color: rgb(201, 201, 201);
 	display: flex;
@@ -41,6 +41,7 @@ input {
     border-left: hidden;
     border-right: hidden;
     border-bottom-color: black;
+    text-align: center;
 }
 
 .no-border {
