@@ -1,7 +1,8 @@
-.down-payment {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+
+.minus {
+    margin-left: 0.7em;
+    margin-top: 2rem;    
 }
 
 .dp {
@@ -10,23 +11,10 @@
     justify-content: center;
 }
 
-.minus {
-    background-color: #7DCADC;
-    color: white;
-    font-weight: bold;
-    font-size: x-large;
-    padding: 0;
-    border-radius: 50%;
-    margin-top: 1em;
-    text-align: center;
-    margin-left: 2em;
-    width: 7%;
-}
 
 .dp-inputs {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    max-width: fit-content;
+    
 }
 
 .dp-percent {

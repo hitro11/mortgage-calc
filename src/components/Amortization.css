@@ -8,6 +8,9 @@ select:hover {
     cursor: pointer;
 }
 
-option {
 
+@media (max-width: 600px) {
+    select {
+        max-width: fit-content;
+    }
 }

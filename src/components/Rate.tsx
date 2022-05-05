@@ -15,8 +15,11 @@ const Rate: React.FC<Props> = (props) => {
 
   return (
     <div className='container'>
-        <label htmlFor="" className="">Rate</label>
-        <input className='rate outline-bottom no-outline' type="text" defaultValue={props.rate} onChange={changeHandler} disabled={props.disabled} />
+        <label htmlFor="" className="rateLabel item1">Rate</label>
+        <div className="input-container">
+          <input className='rate no-outline'  type="text" defaultValue={props.rate} maxLength={5} onChange={changeHandler} disabled={props.disabled} />
+          <label className="suffix">%</label>
+        </div>
     </div>
   )
 }

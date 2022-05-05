@@ -1,4 +1,6 @@
 import './DownPayment.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMinus } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
   downPay: string,
@@ -19,16 +21,21 @@ const DownPayment: React.FC<Props> = (props) => {
   }
 
   return (
-    <div className="down-payment">
-        <div className="dp">
+    <div className="container">
+        <div className="dp item1">
             <label className='' >Down Payment</label>
         </div>
-        <div className='minus'>-</div>
+        <FontAwesomeIcon className='minus icon' icon={faMinus} size={'2xs'} />
         <div className="dp-inputs">
-            <input className='dp-percent outline-bot' type="text" disabled={props.disabled} value={props.downPayP} onChange={downPayPChange} />
-            <input className='dp-dollar outline-bot' type="text" disabled={props.disabled} value={props.downPay} onChange={downPayChange}  />
+          <div className="input-container">
+            <input className='dp-percent outline-bot' type="text" maxLength={5} disabled={props.disabled} value={props.downPayP} onChange={downPayPChange} />
+            <span className="suffix">%</span>
+          </div>
+          <div className="input-container">
+            <span className="prefix">$</span>
+            <input className='dp-dollar outline-bot' type="text" maxLength={9} disabled={props.disabled} value={props.downPay} onChange={downPayChange}  />
+          </div>
         </div>
-
     </div>
   )
 }

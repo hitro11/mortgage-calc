@@ -26,16 +26,16 @@ const Amortization: React.FC<Props> = (props) => {
 
     return (
         <div className='container'>
-            <label htmlFor="" className="">Amortization Period</label>
-            <select className="no-border no-outline" defaultValue={props.amort} onChange={selectHandler} disabled={props.disabled} >
-                {
-                    amortPeriods.map(p => 
-                        <option key={p.value} value={p.value} selected={p.selected} >{p.label}</option>
-                    )
-                }
-            </select> 
-
-            
+            <label htmlFor="" className="item1">Amortization Period</label>
+            <div className="input-container">
+                <select className="no-border no-outline" defaultValue={props.amort} onChange={selectHandler} disabled={props.disabled} >
+                    {
+                        amortPeriods.map(p => 
+                            <option key={p.value} value={p.value} selected={p.selected} >{p.label}</option>
+                        )
+                    }
+                </select> 
+            </div>      
         </div>
     )
 }

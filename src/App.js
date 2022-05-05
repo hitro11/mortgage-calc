@@ -53,8 +53,8 @@ function App() {
   }, [downPay])
 
   return (
-    <div className="App">
-      <div className="section">
+    <div className="app">
+      <div className="section section1">
         <Principal setDisabled={setDisabled} setPrincipal={setPrincipal} principal={principal}/>
       </div>
       <div className="section">
@@ -63,7 +63,7 @@ function App() {
       <div className="section-bg">
         <TotalMortgage disabled={disabled} totalMort={totalMort} setTotalMort={setTotalMort}/>        
       </div>
-      <div className="section">
+      <div className="section section-amort-rate">
         <Amortization disabled={disabled} amort={amort} setAmort={setAmort} />
         <Rate disabled={disabled} rate={rate} setRate={setRate} />
       </div>

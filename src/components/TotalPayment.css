@@ -1,9 +1,4 @@
-.total-payment {
-    justify-content: space-between;
-    padding: 1em 1.5em;
-}
 
-.col {
-    display: flex;
-    flex-direction: column;
+
+@media (max-width: 430px) {
 }

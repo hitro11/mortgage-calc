@@ -1,4 +1,6 @@
 import './TotalMortgage.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEquals } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
   totalMort: string,
@@ -19,10 +21,13 @@ const TotalMortgage: React.FC<Props> = (props) => {
   }
 
   return (
-    <div className='total-mortgage'>
-      <label htmlFor="" className="label">Total Mortgage Required</label>
-      <div className="eq">=</div>
-      <input type="text" readOnly className="blank no-border no-outline" value={props.totalMort} onChange={validateInput} />
+    <div className='container'>
+      <label className="label">Total Mortgage Required</label>
+      <FontAwesomeIcon className='eq icon' icon={faEquals} size={'2xs'} />
+      <div className="input-container read-only">
+        <label className="prefix">$</label>
+        <input type="text" readOnly className="blank no-border no-outline" maxLength={9} value={props.totalMort} onChange={validateInput} />
+      </div>
     </div>
   )
 }
