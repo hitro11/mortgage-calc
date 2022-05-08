@@ -20,7 +20,7 @@ mortgage-calc was built using React, and testing was done using react-testing-li
 
 #### Requirements
 * UI is fully responsive (works on phones, tablets, and larger screens).
-* Works on common browsers (Google Chrome, Mozilla Firefox, Safari, Microsoft Edge, Internet Explorer (version 11+).
+* Works on common browsers (Google Chrome, Mozilla Firefox, Safari, Microsoft Edge).
 * Lightweight (3.12 MB).
 * No external requirements/packages needed to run mortgage-calc.
 * Works on single page applications.
