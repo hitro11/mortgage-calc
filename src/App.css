@@ -138,12 +138,21 @@ select {
         padding: 1em 0;
     }
 
+    .item1 {
+        flex-basis: 30%;
+
+    }
+
     input {
         max-width: 5em;
     }
 
     .input-container {
         width: 20%;
+    }
+
+    .minus {
+        margin-right: -1.5rem;
     }
 
  }

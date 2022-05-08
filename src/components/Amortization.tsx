@@ -31,7 +31,7 @@ const Amortization: React.FC<Props> = (props) => {
                 <select className="no-border no-outline" defaultValue={props.amort} onChange={selectHandler} disabled={props.disabled} >
                     {
                         amortPeriods.map(p => 
-                            <option key={p.value} value={p.value} selected={p.selected} >{p.label}</option>
+                            <option key={p.value} value={p.value} defaultChecked={p.selected} >{p.label}</option>
                         )
                     }
                 </select> 

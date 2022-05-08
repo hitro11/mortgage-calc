@@ -7,28 +7,31 @@ interface Props {
   downPayP: string,
   setDownPay,
   setDownPayP,
+  numbersOnly,
   disabled: boolean
 }
 
 const DownPayment: React.FC<Props> = (props) => {
 
   const downPayPChange = (e) => {
+    e.target.value = props.numbersOnly(e.target.value);    
     props.setDownPayP(e.target.value);
   }
 
   const downPayChange = (e) => {
+    e.target.value = props.numbersOnly(e.target.value);
     props.setDownPay(e.target.value);
   }
 
   return (
     <div className="container">
         <div className="dp item1">
-            <label className='' >Down Payment</label>
+            <label>Down Payment</label>
         </div>
         <FontAwesomeIcon className='minus icon' icon={faMinus} size={'2xs'} />
         <div className="dp-inputs">
           <div className="input-container">
-            <input className='dp-percent outline-bot' type="text" maxLength={5} disabled={props.disabled} value={props.downPayP} onChange={downPayPChange} />
+            <input className='dp-percent outline-bot' type="text" minLength={4} maxLength={6} disabled={props.disabled} value={props.downPayP} onChange={downPayPChange} />
             <span className="suffix">%</span>
           </div>
           <div className="input-container">

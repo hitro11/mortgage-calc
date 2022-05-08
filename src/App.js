@@ -36,36 +36,48 @@ function App() {
       const monthlyPay = (parseInt(totalMort) * percentageRate) / (1 - (Math.pow((1 + percentageRate), period * -1)));
       settotalPay(parseInt(monthlyPay));
     }
-  }, [totalMort, rate, amort]);
+  }, [principal, totalMort, rate, amort,]);
 
   useEffect(() => {
     if (!disabled) {
+      console.log('downpay % changed');
       setDownPay(parseInt(principal * (downPayP/100)));
       setTotalMort(principal - downPay);
     }
-  }, [downPayP, principal])
+  }, [downPayP, principal]);
 
   useEffect(() => {
     if (!disabled) {
-      setDownPayP(parseFloat((downPay / principal) * 100).toFixed(2));
+      console.log('downpay changed');
+      let tempDPP = ((downPay / principal) * 100).toString();
+      tempDPP = (tempDPP.indexOf(".") >= 0) ? (tempDPP.substr(0, tempDPP.indexOf(".")) + tempDPP.substr(tempDPP.indexOf("."), 3)) : tempDPP;
+      setDownPayP(tempDPP);
       setTotalMort(principal - downPay);
     }
-  }, [downPay])
+  }, [downPay, principal]);
+
+
+  // removes letters and special chars from inputted string
+  function numbersOnly(input) {
+    return input.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
+  }
+
+
 
   return (
     <div className="app">
       <div className="section section1">
-        <Principal setDisabled={setDisabled} setPrincipal={setPrincipal} principal={principal}/>
+        <Principal setDisabled={setDisabled} setPrincipal={setPrincipal} principal={principal} numbersOnly={numbersOnly}/>
       </div>
-      <div className="section">
-        <DownPayment disabled={disabled} downPay={downPay} downPayP={downPayP} setDownPay={setDownPay} setDownPayP={setDownPayP} />        
+      <div className="section"> 
+        <DownPayment disabled={disabled} downPay={downPay} downPayP={downPayP} setDownPay={setDownPay} setDownPayP={setDownPayP} numbersOnly={numbersOnly} />        
       </div>
       <div className="section-bg">
-        <TotalMortgage disabled={disabled} totalMort={totalMort} setTotalMort={setTotalMort}/>        
+        <TotalMortgage disabled={disabled} totalMort={totalMort} setTotalMort={setTotalMort} />        
       </div>
       <div className="section section-amort-rate">
         <Amortization disabled={disabled} amort={amort} setAmort={setAmort} />
-        <Rate disabled={disabled} rate={rate} setRate={setRate} />
+        <Rate disabled={disabled} rate={rate} setRate={setRate} numbersOnly={numbersOnly}/>
       </div>
       <div className="section-bg">
         <TotalPayment totalPay={totalPay} />

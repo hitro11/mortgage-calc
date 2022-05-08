@@ -4,29 +4,23 @@ import './Principal.css';
 interface Props {
   principal: string,
   setPrincipal,
-  setDisabled
+  setDisabled,
+  numbersOnly
 }
 
 const AskingPrice: React.FC<Props> = (props) => {
   
   // doesn't allow negative values
-  const setPrincipal = (event) => {
+  const setPrincipal = (e) => {
 
-    event.target.value = event.target.value.replace(',', '');
-    
-    // todo: check if leading char is string
-    event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
+    // e.target.value = e.target.value.replace(',', '');
+    e.target.value = props.numbersOnly(e.target.value);
 
-    if (parseInt(event.target.value) < 1) {
-      event.target.value = '';
+    if (parseInt(e.target.value) < 1)  {
+      e.target.value = '';
     }
 
-    props.setPrincipal(event.target.value);
-  }
-
-  const display: string = (value: string) => {
-
-    return '0';
+    props.setPrincipal(e.target.value);
   }
 
   // enables all inputs when 'go' button is clicked  
