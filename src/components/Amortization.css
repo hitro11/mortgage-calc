@@ -1,0 +1,16 @@
+select {
+    background-color: white;
+    border-bottom: 5px;
+    border-bottom-color: rgb(0, 66, 151);
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+    select {
+        max-width: fit-content;
+    }
+}

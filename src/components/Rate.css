@@ -1,0 +1,14 @@
+
+
+
+ @media only screen and (max-width: 500px) {
+
+    .rateLabel {
+        max-width: 50%;
+    }
+
+    .rateContainer {
+        margin-top: 1.5em;
+    }
+
+}
