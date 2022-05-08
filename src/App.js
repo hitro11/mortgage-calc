@@ -7,6 +7,7 @@ import Rate from './components/Rate.tsx';
 import TotalPayment from './components/TotalPayment.tsx';
 import './App.css';
 
+import "@fontsource/roboto"; // Defaults to weight 400.
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
       const monthlyPay = (parseInt(totalMort) * percentageRate) / (1 - (Math.pow((1 + percentageRate), period * -1)));
       settotalPay(parseInt(monthlyPay));
     }
-  }, [principal, totalMort, rate, amort,]);
+  }, [totalMort, rate, amort]);
 
   useEffect(() => {
     if (!disabled) {
@@ -54,7 +55,7 @@ function App() {
       setDownPayP(tempDPP);
       setTotalMort(principal - downPay);
     }
-  }, [downPay, principal]);
+  }, [downPay]);
 
 
   // removes letters and special chars from inputted string

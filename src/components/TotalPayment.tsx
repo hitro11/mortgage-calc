@@ -13,7 +13,7 @@ const TotalPayment: React.FC<Props> = (props) => {
         </div>
         <div className="input-container read-only">
           <label className="prefix">$</label>
-          <input readOnly type="text" className="blank label " value={props.totalPay} />
+          <input readOnly data-testid='total-payment' type="text" className="blank label " value={props.totalPay} />
         </div>
     </div>
   )

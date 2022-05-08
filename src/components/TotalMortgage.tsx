@@ -26,7 +26,8 @@ const TotalMortgage: React.FC<Props> = (props) => {
       <FontAwesomeIcon className='eq icon' icon={faEquals} size={'2xs'} />
       <div className="input-container read-only">
         <label className="prefix">$</label>
-        <input type="text" readOnly className="blank no-border no-outline" maxLength={9} value={props.totalMort} onChange={validateInput} />
+        <input type="text" readOnly className="blank no-border no-outline" maxLength={9} value={props.totalMort} onChange={validateInput} 
+                data-testid="total-mort"/>
       </div>
     </div>
   )
